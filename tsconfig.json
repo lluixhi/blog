@@ -1,0 +1,16 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "jsx": "react",
+      "isolatedModules": true,
+      "strict": true,
+      "moduleResolution": "node",
+      "typeRoots": ["node_modules/@types", "src/typings"],
+      "esModuleInterop": true,
+      "sourceMap": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+  }
