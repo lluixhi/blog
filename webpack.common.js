@@ -5,7 +5,7 @@ const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 module.exports = {
     entry: path.resolve(__dirname, 'src', 'client', 'index.tsx'),
     resolve: {
-      extensions: ['.js', '.ts', '.tsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       plugins: [ PnpWebpackPlugin ]
     },
     resolveLoader: {
@@ -18,12 +18,13 @@ module.exports = {
     module: {
       rules: [
         {
-            test: /\.html?$/,
-            use: ['html-loader']
+          test: /\.html?$/,
+          loader: 'html-loader'
         },
         {
-          test: /\.tsx?$/,
-          use: ['babel-loader']
+          test: /\.(ts|js)x?$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
         }
       ]
     },

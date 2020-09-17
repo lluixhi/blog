@@ -4,13 +4,13 @@
       "target": "es6",
       "module": "commonjs",
       "jsx": "react",
+      "sourceMap": true,
+      "outDir": "build",
       "isolatedModules": true,
       "strict": true,
       "moduleResolution": "node",
       "typeRoots": ["node_modules/@types", "src/client/typings"],
       "esModuleInterop": true,
-      "sourceMap": true,
-      "outDir": "build"
-    },
-    "include": ["src/**/*"],
-  }
+      "forceConsistentCasingInFileNames": true
+    }
+}

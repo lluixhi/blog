@@ -4,11 +4,9 @@
     "description": "simple blog app using typescript and react",
     "main": "index.jsx",
     "scripts": {
-        "start": "node build/server/server.js",
-        "test": "jest",
-        "tsc": "tsc",
-        "dev": "webpack-dev-server --config webpack.dev.js",
+        "start": "tsc && node build/server/server.js",
         "build": "webpack --config webpack.prod.js",
+        "dev": "webpack-dev-server --config webpack.dev.js",
         "prod": "webpack-dev-server --config webpack.prod.js"
     },
     "proxy": "http://localhost:3000",
