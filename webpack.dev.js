@@ -25,6 +25,6 @@ module.exports = merge(common, {
         ]
     },
     devServer: {
-        contentBase: path.resolve(__dirname, "static")
+        contentBase: path.resolve(__dirname, "build")
     }
 });
