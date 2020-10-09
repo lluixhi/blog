@@ -6,7 +6,6 @@
       "jsx": "react",
       "sourceMap": true,
       "outDir": "build",
-      "isolatedModules": true,
       "strict": true,
       "moduleResolution": "node",
       "emitDecoratorMetadata": true,

@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { getConnection } from 'typeorm';
+
 import { User } from '../entities/User';
 
 const router: Router = Router();
