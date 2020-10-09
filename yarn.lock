@@ -398,6 +398,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/plugin-proposal-decorators@npm:^7.10.5":
+  version: 7.10.5
+  resolution: "@babel/plugin-proposal-decorators@npm:7.10.5"
+  dependencies:
+    "@babel/helper-create-class-features-plugin": ^7.10.5
+    "@babel/helper-plugin-utils": ^7.10.4
+    "@babel/plugin-syntax-decorators": ^7.10.4
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 32be038dd283c82af2ccdd50df7ed9f7dd9d001bc7ebc797efe833181584b5e296b41c07e9f2645a64ca96f55edaa61888eca7fe30cdd4e3c26aaefbe1b3a298
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-proposal-dynamic-import@npm:^7.10.4":
   version: 7.10.4
   resolution: "@babel/plugin-proposal-dynamic-import@npm:7.10.4"
@@ -562,6 +575,17 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: 8d0c1a3f5a922c2cd9387c7313e5516d58bfb6e60885b8d953ae23b6432aafe14be0fa1a2d4348c02f2eaaca82fecd76b7f622bff439775505c021b00a12dcbb
+  languageName: node
+  linkType: hard
+
+"@babel/plugin-syntax-decorators@npm:^7.10.4":
+  version: 7.10.4
+  resolution: "@babel/plugin-syntax-decorators@npm:7.10.4"
+  dependencies:
+    "@babel/helper-plugin-utils": ^7.10.4
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 61a68e950b42ab211b20483692b899daa7fe5622568ebdca427dff5f5bb7fba7c62da15f69219e2b5758429bfa11fa6891c6bb1cab24b242f007da0c461288d3
   languageName: node
   linkType: hard
 
@@ -1826,6 +1850,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^14.11.8":
+  version: 14.11.8
+  resolution: "@types/node@npm:14.11.8"
+  checksum: 5139c07ba76d791b4930fa02ec746656dacf78b43c431d56a7514a8285962d0511bf356bee870968a541033c14967b58f7b2a58c48ac81646ce4eb28d2ff433d
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.0
   resolution: "@types/normalize-package-data@npm:2.4.0"
@@ -2675,7 +2706,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bindings@npm:^1.5.0":
+"bindings@npm:1.5.0, bindings@npm:^1.5.0":
   version: 1.5.0
   resolution: "bindings@npm:1.5.0"
   dependencies:
@@ -2699,11 +2730,14 @@ __metadata:
   dependencies:
     "@babel/core": ^7.11.6
     "@babel/node": ^7.10.5
+    "@babel/plugin-proposal-class-properties": ^7.10.4
+    "@babel/plugin-proposal-decorators": ^7.10.5
     "@babel/preset-env": ^7.11.5
     "@babel/preset-react": ^7.10.4
     "@babel/preset-typescript": ^7.10.4
     "@types/express": ^4.17.8
     "@types/jest": ^26.0.14
+    "@types/node": ^14.11.8
     "@types/react": ^16.9.49
     "@types/react-dom": ^16.9.8
     babel-loader: ^8.1.0
@@ -2716,10 +2750,12 @@ __metadata:
     mini-css-extract-plugin: ^0.11.2
     node-sass: ^4.14.1
     npm-run-all: ^4.1.5
-    pg: ^8.3.3
+    pg: ^8.4.1
+    pg-native: ^3.0.0
     pnp-webpack-plugin: ^1.6.4
     react: ^16.13.1
     react-dom: ^16.13.1
+    reflect-metadata: ^0.1.13
     sass-loader: ^10.0.2
     style-loader: ^1.2.1
     typeorm: ^0.2.26
@@ -5866,6 +5902,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"isarray@npm:0.0.1":
+  version: 0.0.1
+  resolution: "isarray@npm:0.0.1"
+  checksum: daeda3c23646200b0b464b7a9030d10008d7701fc6b7a1b45cafe42b4f4d2dde20835b56f19a49e04bb218245b7f7a2bcc6d0f696cff3711e4eddaa2031c611f
+  languageName: node
+  linkType: hard
+
 "isarray@npm:1.0.0, isarray@npm:^1.0.0, isarray@npm:~1.0.0":
   version: 1.0.0
   resolution: "isarray@npm:1.0.0"
@@ -6643,6 +6686,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"libpq@npm:^1.7.0":
+  version: 1.8.9
+  resolution: "libpq@npm:1.8.9"
+  dependencies:
+    bindings: 1.5.0
+    nan: ^2.14.0
+    node-gyp: latest
+  checksum: af4cc884eb3d7060c286f9b48a4f4c8988adc6b009f9ed4782b6a679431a01330c241cf4e4b6b25bbcd7d2e43f52461e51cc9ddb197bb344e4d4473f9b7f25d6
+  languageName: node
+  linkType: hard
+
 "lines-and-columns@npm:^1.1.6":
   version: 1.1.6
   resolution: "lines-and-columns@npm:1.1.6"
@@ -7153,7 +7207,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"nan@npm:^2.12.1, nan@npm:^2.13.2":
+"nan@npm:^2.12.1, nan@npm:^2.13.2, nan@npm:^2.14.0":
   version: 2.14.1
   resolution: "nan@npm:2.14.1"
   dependencies:
@@ -7959,10 +8013,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pg-connection-string@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "pg-connection-string@npm:2.3.0"
-  checksum: 610d03707d0544af81900facd4b7ef2d7527ea9c016c091c292966d77b53ca56327a3e1fc9a527b94094df356cba1be3bc8de72903ef9c1cd9622d4469d91196
+"pg-connection-string@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "pg-connection-string@npm:2.4.0"
+  checksum: fdb3ec1c3daa8356381b1de3ed5fe03269e69d88644c4eb83a30aec1d1e320e0a8450d7ff8c04666dd06a4798c996c9dd006497f038d338790667965ec940d1d
   languageName: node
   linkType: hard
 
@@ -7970,6 +8024,17 @@ fsevents@^1.2.7:
   version: 1.0.1
   resolution: "pg-int8@npm:1.0.1"
   checksum: b18c3a18e56a4f6de7c3c9df384a7ae47e7a3333ce1f36d324649116dfef4767ba01413993b12aa573ac44da1912d58cc6959eeb1c0f53a4ddb58861d1342a89
+  languageName: node
+  linkType: hard
+
+"pg-native@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "pg-native@npm:3.0.0"
+  dependencies:
+    libpq: ^1.7.0
+    pg-types: ^1.12.1
+    readable-stream: 1.0.31
+  checksum: ff14489af6e1524db8b79ea9bfe8983f7f69d41ce26cb3cc1f84789bd84ab65fde34b4664d507f4ee8ec683e15e32f59269ff987399e5a591d62c5cb2690382a
   languageName: node
   linkType: hard
 
@@ -7982,10 +8047,23 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pg-protocol@npm:^1.2.5":
-  version: 1.2.5
-  resolution: "pg-protocol@npm:1.2.5"
-  checksum: d61b446eebf2ed4a6c9f46f6b6e882ebb4dcfd2cd0d6b2b16954233cb41985f6cb0e61d18e816125d52734ceff5ab5ec1541e9402e07bea0131686742be97e5a
+"pg-protocol@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "pg-protocol@npm:1.3.0"
+  checksum: 2f84434e07560c9d1b1af61c6674f36a0d193aa2ee73929dad649cec96d09e2d4793a3076d59122323554e60a7eefae44e86a089c70d58e7e7d7c27e78464da9
+  languageName: node
+  linkType: hard
+
+"pg-types@npm:^1.12.1":
+  version: 1.13.0
+  resolution: "pg-types@npm:1.13.0"
+  dependencies:
+    pg-int8: 1.0.1
+    postgres-array: ~1.0.0
+    postgres-bytea: ~1.0.0
+    postgres-date: ~1.0.0
+    postgres-interval: ^1.1.0
+  checksum: dcf7b2bb2409446a4841ec5628efc3fd5bcf8ecb0b6cb2e292469ff2edc769ca18bcb59fd5beab61f00695ec7978f320a0d85c161b2c507e9c443f5629f7feec
   languageName: node
   linkType: hard
 
@@ -8002,19 +8080,23 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pg@npm:8.3.3, pg@npm:^8.3.3":
-  version: 8.3.3
-  resolution: "pg@npm:8.3.3"
+"pg@npm:^8.4.1":
+  version: 8.4.1
+  resolution: "pg@npm:8.4.1"
   dependencies:
     buffer-writer: 2.0.0
     packet-reader: 1.0.0
-    pg-connection-string: ^2.3.0
+    pg-connection-string: ^2.4.0
     pg-pool: ^3.2.1
-    pg-protocol: ^1.2.5
+    pg-protocol: ^1.3.0
     pg-types: ^2.1.0
     pgpass: 1.x
-    semver: 4.3.2
-  checksum: 56fc9d6c8537cc5ba5136861fc7fdfc284afb885034c617446af7ea8ce521b5c0514ffad1e1818ab12c800f0531934776a43434b05d87f56939156dbe562679c
+  peerDependencies:
+    pg-native: ">=2.0.0"
+  peerDependenciesMeta:
+    pg-native:
+      optional: true
+  checksum: 56e396cdadbf43a91497a6dfaeda3c782f7dc88a6217a869e52b6a66c9db727b20751768f49c14e6a966ce2a768b984acad6418c8a079ab558b78cef24dd2dcc
   languageName: node
   linkType: hard
 
@@ -8194,6 +8276,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"postgres-array@npm:~1.0.0":
+  version: 1.0.3
+  resolution: "postgres-array@npm:1.0.3"
+  checksum: 28040e4f30c9f01df21093ff5759ffd95752c5e455b9c6b53680f66e3b0557ad32df7e850c8dbd506deaa9b97c0b8d17b2f656f51e0b7538a300e1c2c72ded59
+  languageName: node
+  linkType: hard
+
 "postgres-array@npm:~2.0.0":
   version: 2.0.0
   resolution: "postgres-array@npm:2.0.0"
@@ -8208,7 +8297,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postgres-date@npm:~1.0.4":
+"postgres-date@npm:~1.0.0, postgres-date@npm:~1.0.4":
   version: 1.0.7
   resolution: "postgres-date@npm:1.0.7"
   checksum: 823b22d37c27b7be145f7de8dd98f852dbcb6b54196e325df37350fbfc09dc65a8f6fac0b1200d5c8a90481aaebd99b07ef331e0141d3b242c0a48fe32a94f25
@@ -8586,6 +8675,18 @@ fsevents@^1.2.7:
     string_decoder: ~1.1.1
     util-deprecate: ~1.0.1
   checksum: 6e3826560627a751feb3a8aec073ef94c6e47b8c8e06eb5d136323b5f09db9d2077c23a42a8d54ed0123695af54b36c1e4271a8ec55112b15f4b89020d8dec72
+  languageName: node
+  linkType: hard
+
+"readable-stream@npm:1.0.31":
+  version: 1.0.31
+  resolution: "readable-stream@npm:1.0.31"
+  dependencies:
+    core-util-is: ~1.0.0
+    inherits: ~2.0.1
+    isarray: 0.0.1
+    string_decoder: ~0.10.x
+  checksum: 9db2f0629cdccc8c5799f9f58431f35666ba310a83d0ba36709ba10682ff711ca2fcfc039d27c2de2032615585db1f09715c65f72be312c302194373aff4eede
   languageName: node
   linkType: hard
 
@@ -9101,15 +9202,6 @@ fsevents@^1.2.7:
   bin:
     semver: ./bin/semver
   checksum: 06ff0ed753ebf741b7602be8faad620d6e160a2cb3f61019d00d919c8bca141638aa23c34da779b8595afdc9faa3678bfbb5f60366b6a4f65f98cf86605bbcdb
-  languageName: node
-  linkType: hard
-
-"semver@npm:4.3.2":
-  version: 4.3.2
-  resolution: "semver@npm:4.3.2"
-  bin:
-    semver: ./bin/semver
-  checksum: 325999b7241266b130324d54edba4432413de2afe358c7c482ccf104d3b870eabb655db2178ee966473f4dfcbdcf5f5808d1fb26a670908ba3cca2568ea5f95b
   languageName: node
   linkType: hard
 
@@ -9681,6 +9773,13 @@ fsevents@^1.2.7:
   dependencies:
     safe-buffer: ~5.2.0
   checksum: 0a09afb610cb538707fcf0a50a080f159040529eabdba82f23b04f1d1f90adf9ba18cc3800231c6ab2ee55dece047f4bed87c56da52b2afd85c3c7fb73eb7e48
+  languageName: node
+  linkType: hard
+
+"string_decoder@npm:~0.10.x":
+  version: 0.10.31
+  resolution: "string_decoder@npm:0.10.31"
+  checksum: ae53bca3796913fe686c6b519299a3631d04f0d388f35e7412914e3d351024f711d783d0415babfec276f5f533e84fae687e77220829d872fadb5bb9f7190890
   languageName: node
   linkType: hard
 

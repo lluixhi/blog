@@ -1,0 +1,10 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "username": "test",
+    "password": "test",
+    "database": "blog",
+    "entities": ["src/server/entities/*.ts"],
+    "logging": true,
+    "synchronize": true
+}

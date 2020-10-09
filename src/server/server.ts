@@ -1,16 +1,18 @@
-import path from 'path';
-import express, {Request, Response} from 'express';
+import "reflect-metadata";
+import express from 'express';
+import { createConnection } from 'typeorm';
+import { UserController } from './controllers';
 
-import { ApiController } from './api';
+createConnection().then(connection => { 
+    const app: express.Application = express();
 
-const app: express.Application = express();
+    const port: number = Number(process.env.PORT) || 8080;
 
-const port: number = Number(process.env.PORT) || 8080;
+    app.use(express.static('./build'));
 
-app.use(express.static('./build'));
+    app.use('/', UserController);
 
-app.use('/api', ApiController);
-
-app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}`);
-});
+    app.listen(port, () => {
+        console.log(`Listening at http://localhost:${port}`);
+    });
+}).catch(error => console.log(error));
