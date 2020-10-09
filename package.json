@@ -4,16 +4,16 @@
     "description": "simple blog app using typescript and react",
     "main": "index.jsx",
     "scripts": {
-        "start": "tsc && node build/server/server.js",
-        "build": "webpack --config webpack.prod.js",
-        "dev": "webpack-dev-server --config webpack.dev.js",
-        "prod": "webpack-dev-server --config webpack.prod.js"
+        "serve": "npm-run-all --parallel serve:build-serve serve:build-dev",
+        "serve:build-serve": "webpack --mode development --config webpack.server.js --watch",
+        "serve:build-dev": "webpack --config webpack.dev.js --watch",
+        "build": "webpack --mode production --config webpack.server.js && webpack --config webpack.prod.js"
     },
-    "proxy": "http://localhost:3000",
     "author": "Ariadne Belsito",
     "license": "ISC",
     "dependencies": {
         "express": "^4.17.1",
+        "pg": "^8.3.3",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "typeorm": "^0.2.26"
@@ -36,13 +36,14 @@
         "jest": "^26.4.2",
         "mini-css-extract-plugin": "^0.11.2",
         "node-sass": "^4.14.1",
+        "npm-run-all": "^4.1.5",
         "pnp-webpack-plugin": "^1.6.4",
         "sass-loader": "^10.0.2",
         "style-loader": "^1.2.1",
         "typescript": "^4.0.2",
         "webpack": "^4.44.1",
         "webpack-cli": "^3.3.12",
-        "webpack-dev-server": "^3.11.0",
-        "webpack-merge": "^5.1.4"
+        "webpack-merge": "^5.1.4",
+        "webpack-node-externals": "^2.5.2"
     }
 }

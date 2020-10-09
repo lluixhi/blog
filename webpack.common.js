@@ -1,9 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
+const PnpWebpackPlugin = require('pnp-webpack-plugin');
+
 module.exports = {
-    entry: path.resolve(__dirname, 'src', 'client', 'index.tsx'),
+    entry: {
+      main: path.resolve(__dirname, 'src', 'client', 'index.tsx'),
+    },
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       plugins: [ PnpWebpackPlugin ]
@@ -15,23 +17,24 @@ module.exports = {
       filename: "[name].[contenthash].js",
       path: path.resolve(__dirname, "build")
     },
+    target: 'web',
     module: {
       rules: [
         {
           test: /\.html?$/,
-          loader: 'html-loader'
+          loader: require.resolve('html-loader')
         },
         {
           test: /\.(ts|js)x?$/,
           exclude: /node_modules/,
-          loader: 'babel-loader'
+          loader: require.resolve('babel-loader')
         }
       ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src', 'templates', 'index.tmpl.html')
+            template: path.resolve(__dirname, 'src', 'templates', 'index.tmpl.html'),
+            excludeChunks: [ 'server' ]
         })
     ]
   };

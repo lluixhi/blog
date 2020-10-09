@@ -13,10 +13,10 @@ module.exports = merge(common, {
             use: [
               MiniCssExtractPlugin.loader,
               {
-                loader: 'css-loader',
+                loader: require.resolve('css-loader'),
                 options: { modules: true }
               },
-              'sass-loader'
+              require.resolve('sass-loader')
             ],
           },
         ],

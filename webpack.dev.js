@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -10,21 +11,18 @@ module.exports = merge(common, {
             {
                 test: /\.s(a|c)ss$/,
                 use: [
-                    'style-loader',
+                    require.resolve('style-loader'),
                     {
-                      loader: 'css-loader',
+                      loader: require.resolve('css-loader'),
                       options: {
                           modules: {
                               localIdentName: '[local]'
                           }
                         }
                     },
-                    'sass-loader'
+                    require.resolve('sass-loader')
                 ]
             }
         ]
-    },
-    devServer: {
-        contentBase: path.resolve(__dirname, "build")
     }
 });

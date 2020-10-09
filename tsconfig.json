@@ -9,7 +9,9 @@
       "isolatedModules": true,
       "strict": true,
       "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
       "esModuleInterop": true,
+      "experimentalDecorators": true,
       "forceConsistentCasingInFileNames": true
     }
 }
