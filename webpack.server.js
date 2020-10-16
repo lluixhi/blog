@@ -19,11 +19,14 @@ module.exports = {
     path: path.resolve(__dirname, "build")
   },
   target: 'node',
-  externals: [nodeExternals()],
+  externals: [
+    nodeExternals(),
+    'pg-native'
+  ],
   module: {
     rules: [
       {
-        test: /\.(ts|js)x?$/,
+        test: /\.(ts|js)?$/,
         exclude: /node_modules/,
         loader: require.resolve('babel-loader')
       }

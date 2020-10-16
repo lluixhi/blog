@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, JoinTable, OneToMany } from 'typeorm';
 
 import { Recipe } from './Recipe';
 
@@ -8,15 +8,18 @@ export class Ingredient {
     id!: number;
 
     @Column()
-    amount!: number
+    amount!: number;
 
     @Column()
-    unit!: string
+    unit!: string;
 
     @Column()
-    name!: string
+    name!: string;
+
+    @OneToMany(type => Ingredient, ingredient => ingredient.id)
+    substitutions!: Ingredient[];
 
     @ManyToMany(type => Recipe)
     @JoinTable()
-    recipes!: Recipe[]
+    recipes!: Recipe[];
 }
