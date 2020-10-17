@@ -1,14 +1,17 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToOne, JoinTable } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, ManyToOne } from 'typeorm';
 
-import { User } from './User';
 import { Picture } from './Picture';
+import { User } from './User';
 
 @Entity()
 export class Post {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @OneToOne(type => Picture)
+    @ManyToOne('User', 'posts')
+    user!: User;
+
+    @OneToOne('Picture')
     picture!: Picture;
 
     @Column()

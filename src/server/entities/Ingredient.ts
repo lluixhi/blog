@@ -16,10 +16,10 @@ export class Ingredient {
     @Column()
     name!: string;
 
-    @OneToMany(type => Ingredient, ingredient => ingredient.id)
+    @OneToMany('Ingredient', 'id')
     substitutions!: Ingredient[];
 
-    @ManyToMany(type => Recipe)
+    @ManyToMany('Recipe')
     @JoinTable()
     recipes!: Recipe[];
 }

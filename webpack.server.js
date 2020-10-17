@@ -32,8 +32,5 @@ module.exports = {
         options: { envName: 'server' }
       }
     ]
-  },
-  plugins: [
-      new CleanWebpackPlugin()
-  ]
+  }
 };

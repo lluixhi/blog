@@ -8,10 +8,10 @@ export class Recipe {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @OneToMany(type => Ingredient, ingredient => ingredient.id)
+    @OneToMany('Ingredient', 'id')
     ingredients!: Ingredient[];
 
-    @OneToMany(type => Picture, picture => picture.id)
+    @OneToMany('Picture', 'id')
     picture!: Picture[];
 
     @Column()

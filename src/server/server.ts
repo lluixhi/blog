@@ -3,9 +3,9 @@ import express from 'express';
 import { createConnection } from 'typeorm';
 
 import { UserController } from './controllers';
-const connectionOptions = require('../../ormconfig');
+import ormConfig from '../../ormconfig';
 
-createConnection(connectionOptions).then(connection => { 
+createConnection(ormConfig).then(connection => { 
     const app: express.Application = express();
 
     const port: number = Number(process.env.PORT) || 8080;

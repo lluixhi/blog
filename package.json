@@ -4,8 +4,9 @@
     "description": "simple blog app using typescript and react",
     "main": "index.jsx",
     "scripts": {
-        "serve": "npm-run-all --parallel serve:build-serve serve:build-dev",
         "start": "nodemon build/server.js",
+        "test": "jest",
+        "serve": "npm-run-all --parallel serve:build-serve serve:build-dev",
         "serve:build-serve": "webpack --mode development --config webpack.server.js --watch",
         "serve:build-dev": "webpack --config webpack.dev.js --watch",
         "build": "webpack --mode production --config webpack.server.js && webpack --config webpack.prod.js"
@@ -48,6 +49,7 @@
         "pnp-webpack-plugin": "^1.6.4",
         "sass-loader": "^10.0.2",
         "style-loader": "^1.2.1",
+        "ts-jest": "^26.4.1",
         "typescript": "^4.0.2",
         "webpack": "^4.44.1",
         "webpack-cli": "^3.3.12",
