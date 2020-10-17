@@ -1,5 +1,5 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
@@ -32,5 +32,6 @@ module.exports = {
         options: { envName: 'server' }
       }
     ]
-  }
+  },
+  plugins: [ new Dotenv() ]
 };
