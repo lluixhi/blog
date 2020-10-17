@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToOne, JoinTable } from 'typeorm';
 
 import { User } from './User';
 import { Picture } from './Picture';
@@ -7,9 +7,6 @@ import { Picture } from './Picture';
 export class Post {
     @PrimaryGeneratedColumn()
     id!: number;
-
-    @ManyToOne(() => User, user => user.posts)
-    user!: User;
 
     @OneToOne(type => Picture)
     picture!: Picture;

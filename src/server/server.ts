@@ -1,5 +1,4 @@
 import "reflect-metadata";
-import "regenerator-runtime/runtime.js";
 import express from 'express';
 import { createConnection } from 'typeorm';
 

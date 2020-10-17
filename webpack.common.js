@@ -27,7 +27,8 @@ module.exports = {
         {
           test: /\.(ts|js)x?$/,
           exclude: /node_modules/,
-          loader: require.resolve('babel-loader')
+          loader: require.resolve('babel-loader'),
+          options: { envName: 'client' }
         }
       ]
     },
