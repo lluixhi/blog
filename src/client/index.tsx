@@ -1,16 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Example from './components/Button';
+import { BrowserRouter } from 'react-router-dom';
 
-import styles from "./index.scss";
+import App from "./containers/App/App";
 
-const App = () => {
-    return (
-        <div>
-            <h1 className={styles.title}>Hello Webpack!</h1>
-            <Example />
-        </div>
-    );
-}
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render((<BrowserRouter>
+                    <App />
+                </BrowserRouter>),
+                document.getElementById('root'));

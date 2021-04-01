@@ -2,7 +2,7 @@ import "reflect-metadata";
 import express from 'express';
 import { createConnection } from 'typeorm';
 
-import { UserController } from './controllers';
+import { AuthController, UserController } from './controllers';
 import ormConfig from '../../ormconfig';
 
 createConnection(ormConfig).then(connection => { 
@@ -13,6 +13,7 @@ createConnection(ormConfig).then(connection => {
     app.use(express.static('./build'));
 
     app.use('/api', UserController);
+    app.use('/api', AuthController);
 
     app.listen(port, () => {
         console.log(`Listening at http://localhost:${port}`);

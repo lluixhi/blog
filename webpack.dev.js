@@ -9,7 +9,7 @@ module.exports = merge(common, {
     module: {
         rules: [
             {
-                test: /\.s(a|c)ss$/,
+                test: /\.(s(a|c)ss|css)$/,
                 use: [
                     require.resolve('style-loader'),
                     {
