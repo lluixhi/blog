@@ -1,20 +1,21 @@
 import React from 'react';
-import { Icon, Navbar, NavItem, Row } from "react-materialize";
+import { Icon, Navbar, Row } from "react-materialize";
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
         <Row>
             <Navbar
                 menuIcon={<Icon>menu</Icon>}>
-                    <NavItem href="">
+                    <NavLink to="">
                         Home
-                    </NavItem>
-                    <NavItem href="contact">
+                    </NavLink>
+                    <NavLink to="contact">
                         Contact
-                    </NavItem>
-                    <NavItem href="login">
+                    </NavLink>
+                    <NavLink to="login">
                         Login
-                    </NavItem>
+                    </NavLink>
             </Navbar>
         </Row>
     );
