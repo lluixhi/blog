@@ -1,13 +1,16 @@
 import React from 'react';
+import 'materialize-css';
 
 import AuthBox from '../../organisms/AuthBox/AuthBox';
-
-import styles from "./Login.scss";
+import Header from '../../organisms/Header/Header';
 
 const Login = () => {
     return (
-        <div className={styles.centered}>
-            <AuthBox />
+        <div>
+            <Header />
+            <div className='container'>
+                <AuthBox />
+            </div>
         </div>
     );
 };

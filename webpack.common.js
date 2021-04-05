@@ -15,7 +15,8 @@ module.exports = {
     },
     output: {
       filename: "[name].[contenthash].js",
-      path: path.resolve(__dirname, "build")
+      path: path.resolve(__dirname, 'build', 'static'),
+      publicPath: '/'
     },
     target: 'web',
     module: {

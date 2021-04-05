@@ -1878,7 +1878,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router-dom@npm:^5":
+"@types/react-router-dom@npm:*, @types/react-router-dom@npm:^5":
   version: 5.1.7
   resolution: "@types/react-router-dom@npm:5.1.7"
   dependencies:
@@ -1886,6 +1886,16 @@ __metadata:
     "@types/react": "*"
     "@types/react-router": "*"
   checksum: c5afe043f99cbe8e05e85db5b95b5fd724e7b00e0314b8bbc081e36c113e22fd102cd0c7a957c7ad55a55d2def91c17b07ffba45c2ac4a00cc56c5c927c93d4c
+  languageName: node
+  linkType: hard
+
+"@types/react-router-hash-link@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@types/react-router-hash-link@npm:1.2.1"
+  dependencies:
+    "@types/react": "*"
+    "@types/react-router-dom": "*"
+  checksum: d724df63bf8fa8e184ca18f0414d378a72b875cc5562c2c7a5d90f80d3c7a4ee26cbeba74cd7de239bef14457047cd6d9d9db7d0d3e1f282217f9b8d54a8e1a1
   languageName: node
   linkType: hard
 
@@ -2845,6 +2855,7 @@ __metadata:
     "@types/react": ^16.9.49
     "@types/react-dom": ^16.9.8
     "@types/react-router-dom": ^5
+    "@types/react-router-hash-link": ^1.2.1
     babel-loader: ^8.1.0
     babel-plugin-transform-typescript-metadata: ^0.3.1
     cookie-parser: ^1.4.5
@@ -2868,6 +2879,7 @@ __metadata:
     react-dom: ^16.13.1
     react-materialize: ^3.9.8
     react-router-dom: ^5.2.0
+    react-router-hash-link: ^2.4.0
     reflect-metadata: ^0.1.13
     sass-loader: ^10.0.2
     style-loader: ^1.2.1
@@ -9309,6 +9321,18 @@ fsevents@^1.2.7:
   peerDependencies:
     react: ">=15"
   checksum: 9ad2d72630491f324a0f0c1dbcc3dc04d8d7cee7cb9dc9effd115fe736ba06104360a78a624170f863738d77e487d459864206a79d91d3c9663cf1dadb3b637f
+  languageName: node
+  linkType: hard
+
+"react-router-hash-link@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "react-router-hash-link@npm:2.4.0"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ">=15"
+    react-router-dom: ">=4"
+  checksum: f7a2c69a509c08895398ed54a35c7a3dd742371210752e5a948cc4fdafecbcc2f1b1882e0e0aace6985803040e67396951f2a4e2dfe7be2f74869b1a8106fae6
   languageName: node
   linkType: hard
 

@@ -1,23 +1,21 @@
 import React from 'react';
-import { Icon, Navbar, Row } from "react-materialize";
+import { Icon, Navbar } from "react-materialize";
 import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 
 const Header = () => {
     return (
-        <Row>
-            <Navbar
-                menuIcon={<Icon>menu</Icon>}>
-                    <NavLink to="">
-                        Home
-                    </NavLink>
-                    <NavLink to="contact">
-                        Contact
-                    </NavLink>
-                    <NavLink to="login">
-                        Login
-                    </NavLink>
-            </Navbar>
-        </Row>
+        <Navbar
+            alignLinks='right'
+            brand={<NavLink to='/'>CB</NavLink>}
+            menuIcon={<Icon>menu</Icon>}>
+                <NavHashLink to="/#projects">
+                    Projects
+                </NavHashLink>
+                <NavHashLink to="/#contact">
+                    Contact
+                </NavHashLink>
+        </Navbar>
     );
 };
 

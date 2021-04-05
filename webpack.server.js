@@ -23,6 +23,9 @@ module.exports = {
     nodeExternals(),
     'pg-native'
   ],
+  node: {
+    __dirname: false
+  },
   module: {
     rules: [
       {
