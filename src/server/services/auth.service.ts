@@ -1,17 +1,23 @@
-import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
+import { User } from '../entities/User';
+import { Login } from '../entities/Login';
+import { getRepository } from 'typeorm';
 
-const secret: string = 'what has the hobbit got in its pocketses';
+export const addLogin = async (username: string, secret: string) => {
+    const user = await getRepository(User).findOne({ username: username });
+    if (user != undefined) {
+        const login = new Login();
+        login.username = username;
+        login.token = secret;
+        await getRepository(Login).save(login);
+    } else {
+        throw new Error('User not found');
+    }
+}
 
-export const withAuth = async (req: Request, res: Response, next: NextFunction) => {
-    const authCookie = req.cookies.authtoken;
+export const removeLogin = async (username: string) => {
 
-    jwt.verify(authCookie, secret, (err: jwt.VerifyErrors | null, decoded: any) => {
-        if (err) {
-            res.sendStatus(403);
-        } else if (decoded.username) {
-            req.user.username = decoded.username;
-            next();
-        }
-    })
+}
+
+export const getLogin = async (username: string) => {
+
 }

@@ -1,19 +1,17 @@
 import crypto from 'crypto';
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, BeforeInsert, BeforeUpdate } from 'typeorm';
+import { Entity, Column, PrimaryColumn, OneToMany, OneToOne, BeforeInsert, BeforeUpdate, JoinColumn } from 'typeorm';
 
 import { Post } from './Post';
+import { Login } from './Login';
 
 const salt: string = 'picklejuice';
 
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn()
-    id!: number;
-
-    @Column()
+    @PrimaryColumn()
     username!: string;
 
-    @Column({ select: false })
+    @Column()
     password!: string;
 
     @BeforeInsert()
@@ -29,12 +27,20 @@ export class User {
 
     @OneToMany('Post', 'user')
     posts!: Post[];
+
+    @OneToOne(() => Login)
+    @JoinColumn()
+    login!: Login;
 }
 
-export function hash(password: string): string {
+const hash = (password: string): string => {
     crypto.pbkdf2(password, salt, 200000, 64, 'sha512', (err, derivedKey) => {
         if (err) throw err;
         return derivedKey.toString('hex');
     });
     return '';
+}
+
+export const comparePassword = (password: string, hashedPassword: string): boolean => {
+    return hash(password).localeCompare(hashedPassword) == 0;
 }

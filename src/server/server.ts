@@ -17,8 +17,8 @@ createConnection(ormConfig).then(connection => {
     }));
     app.use(cookieParser());
 
-    app.use('/api', UsersRoute);
-    app.use('/api', AuthRoute);
+    app.use('/api/users', UsersRoute);
+    app.use('/api/auth', AuthRoute);
 
     app.use(express.static(publicPath));
     app.use('*', express.static(publicPath));

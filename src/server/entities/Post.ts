@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToOne, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm';
 
 import { Picture } from './Picture';
 import { User } from './User';
@@ -11,8 +11,8 @@ export class Post {
     @ManyToOne('User', 'posts')
     user!: User;
 
-    @OneToOne('Picture')
-    picture!: Picture;
+    @OneToMany('Picture', 'pictures')
+    picture!: Picture[];
 
     @Column()
     text!: string;

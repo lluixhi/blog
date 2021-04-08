@@ -1,15 +1,13 @@
 import React from 'react';
-import 'materialize-css';
-
 import AuthBox from '../../organisms/AuthBox/AuthBox';
 import Header from '../../organisms/Header/Header';
 
-const Login = () => {
+const Login = (props: { onClick: VoidFunction }) => {
     return (
         <div>
             <Header />
             <div className='container'>
-                <AuthBox />
+                <AuthBox onClick={props.onClick}/>
             </div>
         </div>
     );

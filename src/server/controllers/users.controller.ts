@@ -9,22 +9,22 @@ export const getAllUsers = async (req: Request, res: Response) => {
     res.json(users);
 }
 
-export const getOneUser = async (req: Request, res: Response) => {
+export const getUser = async (req: Request, res: Response) => {
     // Return one user
-    const results = await getRepository(User).findOne(req.params.id);
+    const results = await getRepository(User).findOne(req.params.username);
     res.json(results);
 }
 
-export const saveOneUser = async (req: Request, res: Response) => {
+export const saveUser = async (req: Request, res: Response) => {
     // Save one user
     const user = getRepository(User).create(req.body);
     const results = await getRepository(User).save(user);
     return res.send(results);
 }
 
-export const updateOneUser = async (req: Request, res: Response) => {
+export const updateUser = async (req: Request, res: Response) => {
     // Update 1 user
-    const user = await getRepository(User).findOne(req.params.id);
+    const user = await getRepository(User).findOne(req.params.username);
     if (user != undefined) {
         getRepository(User).merge(user, req.body);
         const results = await getRepository(User).save(user);
@@ -32,8 +32,8 @@ export const updateOneUser = async (req: Request, res: Response) => {
     }
 }
 
-export const deleteOneUser = async (req: Request, res: Response) => {
+export const deleteUser = async (req: Request, res: Response) => {
     // Delete 1 user
-    const results = await getRepository(User).delete(req.params.id);
+    const results = await getRepository(User).delete(req.params.username);
     return res.send(results);
 }

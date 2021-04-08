@@ -4,10 +4,10 @@ import * as users from '../controllers/users.controller';
 
 const router: Router = Router();
 
-router.get('/users', users.getAllUsers);
-router.get('/users/:id', users.getOneUser);
-router.post('/users', users.saveOneUser);
-router.put('/users/:id', users.updateOneUser);
-router.delete('/users/:id', users.deleteOneUser);
+router.get('/', users.getAllUsers);
+router.get('/:username', users.getUser);
+router.post('/', users.saveUser);
+router.put('/:username', users.updateUser);
+router.delete('/:username', users.deleteUser);
 
 export const UsersRoute: Router = router;
