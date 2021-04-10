@@ -6,6 +6,6 @@ const router: Router = Router();
 
 router.post('/login', authControl.login);
 router.post('/logout', authControl.logout);
-router.get('/checkLogin', authControl.okay);
+router.get('/checkLogin', authControl.withAuth, authControl.okay);
 
 export const AuthRoute: Router = router;

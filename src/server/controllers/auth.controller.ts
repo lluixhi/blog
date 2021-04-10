@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 
 import * as auth from '../services/auth.service';
@@ -30,13 +30,17 @@ export const logout = async (req: Request, res: Response) => {
     }
 }
 
-export const okay = async (req: Request, res: Response) => {
+export const withAuth = async (req: Request, res: Response, next: NextFunction) => {
     try {
         await auth.getLogin(req.cookies.session);
-        res.sendStatus(200);
+        next();
     } catch (err) {
-        res.status(403).json({
+        res.status(401).json({
             error: err.toString()
         })
     }
+}
+
+export const okay = async (req: Request, res: Response) => {
+    res.sendStatus(200);
 }

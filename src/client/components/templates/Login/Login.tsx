@@ -2,12 +2,12 @@ import React from 'react';
 import AuthBox from '../../organisms/AuthBox/AuthBox';
 import Header from '../../organisms/Header/Header';
 
-const Login = (props: { onClick: VoidFunction }) => {
+const Login = () => {
     return (
         <div>
             <Header />
             <div className='container'>
-                <AuthBox onClick={props.onClick}/>
+                <AuthBox />
             </div>
         </div>
     );
